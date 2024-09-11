@@ -1,4 +1,4 @@
-Add macOS like window to your srennshots:
+Add macOS like window to your screenshot
 
 4 New Themes:
 
