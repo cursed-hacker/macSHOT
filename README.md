@@ -1,4 +1,19 @@
-Add macOS like window to your screenshot
+<h1 style="
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 2.5em; 
+  color: transparent; 
+  background: linear-gradient(90deg, #ff007f, #7f00ff); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+">
+  My Project Name
+</h1>
+
+
 
 4 New Themes:
 
