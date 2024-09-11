@@ -1,5 +1,3 @@
 <h1 align="center">Add macOS like window to your screenshot</h1>
 
-
-![screencapture-cursed-hacker-github-io-macSHOT-2024-09-11-22_15_00](https://github.com/user-attachments/assets/2da6387d-95cb-46c6-b822-70dce9baea19)
-![screencapture-cursed-hacker-github-io-macSHOT-2024-09-11-17_56_09](https://github.com/user-attachments/assets/086d4d47-d749-4ed6-ba88-391fcd78528b)
+![image](https://github.com/user-attachments/assets/836cac47-806d-4378-9f59-ce0929da6649)
