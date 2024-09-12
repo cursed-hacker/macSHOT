@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>macOS Screenshot</title>
     <style>
+        /* Your existing CSS */
         body {
             background-color: #121212;
-
+            /* Default dark mode 1 background */
             color: #e0e0e0;
-
+            /* Default dark mode 1 text color */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,123 +20,123 @@
             height: 100vh;
             margin: 0;
             padding: 20px;
-
+            /* Add padding around the viewport */
             box-sizing: border-box;
-
+            /* Ensure padding is included in the height */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
+            /* macOS-like font family */
             transition: background-color 0.3s, color 0.3s;
-
+            /* Smooth transition for background color and text color */
         }
 
         .light-mode {
             background-color: #ffffff;
-
+            /* Light mode background */
             color: #000000;
-
+            /* Light mode text color */
         }
 
         .dark-mode-1 {
             background-color: #121212;
-
+            /* Dark mode 1 background */
             color: #e0e0e0;
-
+            /* Dark mode 1 text color */
         }
 
         .dark-mode-2 {
             background-color: #2e2e2e;
-
+            /* Dark mode 2 background */
             color: #c0c0c0;
-
+            /* Dark mode 2 text color */
         }
 
         .dark-mode-3 {
             background-color: #3a3a3a;
-
+            /* Dark mode 3 background */
             color: #a0a0a0;
-
+            /* Dark mode 3 text color */
         }
 
         .container {
             position: relative;
             border-radius: 10px;
-
+            /* Rounded corners for the window */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+            /* Shadow for the window */
             overflow: hidden;
-
+            /* Ensure the content doesn't overflow the rounded corners */
             background: #1e1e1e;
-
+            /* Default dark mode 1 container background */
             transition: background-color 0.3s;
-
+            /* Smooth transition for container background color */
         }
 
         .light-mode .container {
             background: #f5f5f5;
-
+            /* Light mode container background */
         }
 
         .dark-mode-1 .container {
             background: #1e1e1e;
-
+            /* Dark mode 1 container background */
         }
 
         .dark-mode-2 .container {
             background: #3a3a3a;
-
+            /* Dark mode 2 container background */
         }
 
         .dark-mode-3 .container {
             background: #4a4a4a;
-
+            /* Dark mode 3 container background */
         }
 
         .header {
             width: 100%;
             height: 30px;
             background: #333;
-
+            /* Default dark mode 1 header background */
             display: flex;
             align-items: center;
             padding: 0 10px;
             box-sizing: border-box;
             border-top-left-radius: 10px;
-
+            /* Curve top left corner */
             border-top-right-radius: 10px;
-
+            /* Curve top right corner */
             position: absolute;
             top: 0;
             left: 0;
             z-index: 1;
             transition: background-color 0.3s;
-
+            /* Smooth transition for background color */
         }
 
         .light-mode .header {
             background: #e0e0e0;
-
+            /* Light mode header background */
         }
 
         .dark-mode-1 .header {
             background: #333;
-
+            /* Dark mode 1 header background */
         }
 
         .dark-mode-2 .header {
             background: #4a4a4a;
-
+            /* Dark mode 2 header background */
         }
 
         .dark-mode-3 .header {
             background: #585858;
-
+            /* Dark mode 3 header background */
         }
 
         .header .controls {
             display: flex;
             gap: 8px;
             margin-left: 10px;
-
+            /* Shift controls to the left */
         }
 
         .header .controls div {
@@ -145,27 +145,27 @@
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
-
+            /* Make the dots clickable */
         }
 
         .header .controls div:nth-child(1) {
             background-color: #ff5f57;
-
+            /* Red button color */
         }
 
         .header .controls div:nth-child(2) {
             background-color: #ffbd44;
-
+            /* Minimize button color */
         }
 
         .header .controls div:nth-child(3) {
             background-color: #28c841;
-
+            /* Maximize button color */
         }
 
         .header .controls div:nth-child(4) {
             background-color: #9b9b9b;
-
+            /* Extra button color */
         }
 
         img {
@@ -174,24 +174,24 @@
             max-height: 100%;
             object-fit: contain;
             margin-top: 30px;
-
+            /* Add margin to push image down, making space for the header */
             border-radius: 0 0 10px 10px;
-
+            /* Only curve the bottom corners of the image */
         }
 
         input[type="file"] {
             opacity: 0;
-
+            /* Hide the default file input button */
             position: absolute;
-
+            /* Position it off-screen */
             z-index: -1;
-
+            /* Ensure it's behind other elements */
         }
 
         .file-upload-label {
             display: inline-block;
             background: #007aff;
-
+            /* macOS blue */
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -203,7 +203,7 @@
 
         .file-upload-label:hover {
             background: #0051a8;
-
+            /* Darker blue on hover */
         }
 
         .hidden {
@@ -212,33 +212,33 @@
 
         #boldText {
             font-weight: bold;
-
+            /* Ensure the text is bold */
             font-size: 55px;
-
+            /* macOS text sizes are generally not too large */
             color: #000;
-
+            /* Use a dark text color */
             background: linear-gradient(45deg, #ffffff, #ffffff);
-
+            /* Light gradient for a macOS feel */
             -webkit-background-clip: text;
-
+            /* Clip the background to the text */
             color: transparent;
-
+            /* Make the text color transparent so the gradient shows */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-
+            /* Soft shadow for a subtle 3D effect */
             padding: 8px 12px;
-
+            /* Slight padding for better readability */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
+            /* macOS-like font family */
         }
 
         #unameText {
             font-weight: bold;
             font-size: 15px;
-
+            /* Smaller font size for Hello */
             color: #000;
-
-            background: linear-gradient(45deg, #191919, #191919);
-
+            /* Dark text color */
+            background: linear-gradient(45deg, #212121, #212121);
+            /* Same gradient style */
             -webkit-background-clip: text;
             color: transparent;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -246,7 +246,7 @@
             margin-bottom: -74px;
             text-align: center;
             margin-left: 95px;
-
+            /* Adjust margin for proper spacing from the edge */
 
         }
 
@@ -260,7 +260,7 @@
             height: 12px;
             border-radius: 50%;
             background-color: #ff5f57;
-
+            /* Red dot color */
         }
 
         .green-dot {
@@ -268,7 +268,7 @@
             height: 12px;
             border-radius: 50%;
             background-color: #28c841;
-
+            /* Red dot color */
         }
 
         .yellow-dot {
@@ -276,39 +276,29 @@
             height: 12px;
             border-radius: 50%;
             background-color: #ffbd44;
-
+            /* Red dot color */
         }
 
         .instruction {
             font-weight: lighter;
-
+            /* Ensure the text is bold */
             font-size: 18px;
-
+            /* macOS text sizes are generally not too large */
             color: #000;
-
+            /* Use a dark text color */
             background: linear-gradient(45deg, #e0e0e0, #d0d0d0);
-
+            /* Light gradient for a macOS feel */
             -webkit-background-clip: text;
-
+            /* Clip the background to the text */
             color: gray;
-
+            /* Make the text color transparent so the gradient shows */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-
+            /* Soft shadow for a subtle 3D effect */
             padding: 8px 12px;
-
+            /* Slight padding for better readability */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
+            /* macOS-like font family */
             text-align: center;
-        }
-
-        .github-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .github-link i {
-            font-size: 16px;
-
         }
     </style>
 </head>
@@ -317,6 +307,7 @@
 
     <h4 id="unameText">cursed_hacker</h4> <!-- New Hello text -->
     <h3 id="boldText">macSHOT</h3>
+
     <div class="dot-container">
         <div id="reddot" class="red-dot"></div>
         <div id="instruction1" class="instruction"> Closes Window</div>
@@ -331,10 +322,6 @@
     <div class="dot-container"></div>
     <div class="instruction" style="visibility: hidden;">Secret</div>
     </div>
-
-    <a id="instruction4" href="https://github.com/cursed-hacker" class="github-link" target="_blank"><i
-            class="fab fa-github"></i></a>
-
 
     <!-- <div class="dot-container">
         <div id="instruction4" style="color: gray;"> Use "GoFullPage" Chrome Extension To Screenshot The Output</div>
@@ -355,7 +342,7 @@
         <img id="displayImage" src="" alt="">
     </div>
     <label for="fileInput" class="file-upload-label" id="uploadLabel">Upload Image</label>
-    <input type="file" id="fileInput" accept="image
+    <input type="file" id="fileInput" accept="image/*">
 
     <script>
         const fileInput = document.getElementById('fileInput');
@@ -366,88 +353,87 @@
         const container = document.querySelector('.container');
         const header = document.querySelector('.header');
         const uploadLabel = document.getElementById('uploadLabel');
-        const boldText = document.getElementById('boldText'); 
+        const boldText = document.getElementById('boldText'); // Add this line
         const refreshButton = document.getElementById('refreshButton');
 
         refreshButton.addEventListener('click', () => {
-            location.reload(); 
+            location.reload(); // Refresh the page
         });
 
-        let currentMode = 1; 
-        let uploadedFileName = ''; 
+        let currentMode = 1; // Set default to Dark Mode 1
+        let uploadedFileName = ''; // Declare a global variable to hold the file name
 
         fileInput.addEventListener('change', (event) => {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                uploadedFileName = file.name.split('.')[0]; 
+                uploadedFileName = file.name.split('.')[0]; // Extract the file name without extension
 
                 reader.onload = (e) => {
                     displayImage.src = e.target.result;
-                    displayImage.style.display = 'block'; 
-                    uploadLabel.classList.add('hidden'); 
-                    boldText.style.display = 'none'; 
-                    reddot.style.display = 'none'; 
-                    yellowdot.style.display = 'none'; 
-                    greendot.style.display = 'none'; 
-                    instruction1.style.display = 'none'; 
-                    instruction2.style.display = 'none'; 
-                    instruction3.style.display = 'none'; 
-                    instruction4.style.display = 'none'; 
+                    displayImage.style.display = 'block'; // Show image
+                    uploadLabel.classList.add('hidden'); // Hide the upload label
+                    boldText.style.display = 'none'; // Hide the bold text
+                    reddot.style.display = 'none'; // Hide the red dot
+                    yellowdot.style.display = 'none'; // Hide the green dot
+                    greendot.style.display = 'none'; // Hide the green dot
+                    instruction1.style.display = 'none'; // Hide the instruction
+                    instruction2.style.display = 'none'; // Hide the instruction
+                    instruction3.style.display = 'none'; // Hide the instruction
                 };
                 reader.readAsDataURL(file);
             }
         });
 
         themeToggle.addEventListener('click', () => {
-            currentMode = (currentMode + 1) % 4; 
+            currentMode = (currentMode + 1) % 4; // Cycle through 0, 1, 2, 3
 
             if (currentMode === 0) {
-                
+                // Light Mode
                 body.classList.remove('dark-mode-1', 'dark-mode-2', 'dark-mode-3');
                 body.classList.add('light-mode');
-                container.style.background = '#f5f5f5'; 
-                header.style.background = '#ffffff'; 
-                body.style.backgroundColor = '#ffffff'; 
-                body.style.color = '#000000'; 
+                container.style.background = '#f5f5f5'; // Light mode container background
+                header.style.background = '#ffffff'; // Light mode header background
+                body.style.backgroundColor = '#ffffff'; // Light mode body background
+                body.style.color = '#000000'; // Light mode text color
             } else if (currentMode === 1) {
-                
+                // Dark Mode 1
                 body.classList.remove('light-mode', 'dark-mode-2', 'dark-mode-3');
                 body.classList.add('dark-mode-1');
-                container.style.background = '#1e1e1e'; 
-                header.style.background = '#333'; 
-                body.style.backgroundColor = '#121212'; 
-                body.style.color = '#e0e0e0'; 
+                container.style.background = '#1e1e1e'; // Dark mode 1 container background
+                header.style.background = '#333'; // Dark mode 1 header background
+                body.style.backgroundColor = '#121212'; // Dark mode 1 body background
+                body.style.color = '#e0e0e0'; // Dark mode 1 text color
             } else if (currentMode === 2) {
-                
+                // Dark Mode 2
                 body.classList.remove('dark-mode-1', 'dark-mode-3');
                 body.classList.add('dark-mode-2');
-                container.style.background = '#3a3a3a'; 
-                header.style.background = '#4a4a4a'; 
-                body.style.backgroundColor = '#2e2e2e'; 
-                body.style.color = '#c0c0c0'; 
+                container.style.background = '#3a3a3a'; // Dark mode 2 container background
+                header.style.background = '#4a4a4a'; // Dark mode 2 header background
+                body.style.backgroundColor = '#2e2e2e'; // Dark mode 2 body background
+                body.style.color = '#c0c0c0'; // Dark mode 2 text color
             } else if (currentMode === 3) {
-                
+                // Dark Mode 3
                 body.classList.remove('dark-mode-1', 'dark-mode-2');
                 body.classList.add('dark-mode-3');
-                container.style.background = '#4a4a4a'; 
-                header.style.background = '#ffffff'; 
-                body.style.backgroundColor = '#121212'; 
-                body.style.color = '#a0a0a0'; 
+                container.style.background = '#4a4a4a'; // Dark mode 3 container background
+                header.style.background = '#ffffff'; // Dark mode 3 header background
+                body.style.backgroundColor = '#121212'; // Dark mode 3 body background
+                body.style.color = '#a0a0a0'; // Dark mode 3 text color
             }
         });
 
         ssButton.addEventListener('click', () => {
-            takeScreenshot(); 
+            takeScreenshot(); // Call takeScreenshot function
         });
 
         function takeScreenshot() {
             html2canvas(document.body).then(function (canvas) {
-                
+                // Convert the canvas to an image and create a download link
                 const link = document.createElement('a');
                 link.href = canvas.toDataURL('image/png');
                 const screenshotFileName = uploadedFileName ? `${uploadedFileName}_macked.png` : 'macked.png';
-                link.download = screenshotFileName; 
+                link.download = screenshotFileName; // Use the uploaded file name in the screenshot file name
                 link.click();
             });
         }
