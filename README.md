@@ -1,4 +1,4 @@
-<h1 align="center">Add macOS like window to your screenshots</h1>
+<h1 align="center">Add macOS Style Window to Your Screenshots</h1>
 
 <h4 align="center">
   <a href="https://cursed-hacker.github.io/macSHOT/" target="_blank">
