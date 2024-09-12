@@ -1,3 +1,6 @@
+markdown: kramdown
+
+
 <h1 align="center">Add macOS like window to your screenshots</h1>
 
 <h4 align="center">
