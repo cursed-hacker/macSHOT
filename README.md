@@ -20,6 +20,6 @@
 >	-	❗ The built-in screenshot function doesn't fully capture CSS shadows in white theme.
 >		-	```html2canvas```  may not perfectly capture shadows or certain CSS properties due to its limitations.
 >		-	An alternative approach is to use the ```Browser API```, though it requires requesting screen permissions.
->		-	🔹 You can also use <a href="https://shorturl.at/SS4Sb" target="_blank">GoFullPage</a> chrome extension.
+>		-	🔹 You can also use the <a href="https://shorturl.at/SS4Sb" target="_blank">GoFullPage</a> chrome extension to take screenshots.
 
 ----------------------
