@@ -16,7 +16,7 @@
 ----------------------
 
 > [!IMPORTANT]
->  Bugs :
+>  ```Bugs```
 >	-	❗ The built-in screenshot function doesn't fully capture CSS shadows in white theme.
 >		-	```html2canvas```  may not perfectly capture shadows or certain CSS properties due to its limitations.
 >		-	An alternative approach is to use the ```Browser API```, though it requires requesting screen permissions.
