@@ -271,6 +271,22 @@
 
 		}
 
+		.social-container {
+			display: flex;
+			align-items: center;
+		}
+
+		.social-container>* {
+			margin-right: 10px;
+			/* Adjust the value as needed */
+		}
+
+		/* Optional: Remove the margin from the last icon */
+		.social-container>*:last-child {
+			margin-right: 0;
+		}
+
+
 		.dot-container {
 			display: flex;
 			align-items: center;
@@ -334,7 +350,8 @@
 
 <body class="dark-mode-1"> <!-- Set default dark mode 1 -->
 
-	<h4 id="unameText">cursed_hacker</h4> <!-- New Hello text -->
+	<!-- <h4 id="unameText">cursed_hacker</h4> New Hello text -->
+
 	<h3 id="boldText">macSH<span>O</span>T</h3>
 	<h3 id="lowerboldText">Add macOS Style Window to Your Screenshots</h3>
 
@@ -358,8 +375,14 @@
 	<div class="instruction" style="visibility: hidden;">Secret</div>
 	</div>
 
-	<a id="instruction4" href="https://github.com/cursed-hacker" class="github-link" target="_blank"><i
-			class="fab fa-github"></i></a>
+	<div class="social-container">
+		<a id="instruction4" href="https://github.com/cursed-hacker" class="github-link" target="_blank"><i
+				class="fab fa-github"></i></a>
+		<a id="instruction5" href="https://www.linkedin.com/in/vicky-patmase-11ab76187/" class="github-link"
+			target="_blank"><i class="fab fa-linkedin"></i></a>
+		<a id="instruction6" href="https://www.instagram.com/cursed_hacker/" class="github-link" target="_blank"><i
+				class="fab fa-instagram"></i></a>
+	</div>
 
 
 	<!-- <div class="dot-container">
@@ -421,6 +444,9 @@
 					instruction2.style.display = 'none'; // Hide the instruction
 					instruction3.style.display = 'none'; // Hide the instruction
 					instruction4.style.display = 'none'; // Hide the instruction
+					instruction5.style.display = 'none'; // Hide the instruction
+					instruction6.style.display = 'none'; // Hide the instruction
+
 				};
 				reader.readAsDataURL(file);
 			}
